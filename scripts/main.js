@@ -21,6 +21,15 @@ function setResults (yourOption, theirOption, result) {
 function initiateListeners () {
     const controller = document.querySelector('#game-buttons')
 
+    const enemyVersusEnemyButton = document.querySelector('#eve-button')
+
+    enemyVersusEnemyButton.addEventListener('click', () => {
+        const opponentHas = game.getRandomOption()
+        const thisHas = game.getRandomOption()
+        const result = thisHas.testAgainst(opponentHas)
+        setResults(thisHas, opponentHas, result)
+    })
+
     game.options.forEach(option => {
         const button = document.createElement('button')
         
