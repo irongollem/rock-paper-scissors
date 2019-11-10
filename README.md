@@ -21,6 +21,11 @@ For the tests to run you will need some dependancies. Simply grab them with `yar
 yarn install
 # or npm install if you prefer npm, although the lock file assumes you use yarn
 ```
+And then you may run nightwatch
+```bash
+./node_modules/.bin/nightwatch # Possibly supplement with a test file like pageLoad.js
+```
+from the root directory.
 
 # Sidenote
 The constraints of this project did not allow for any external
