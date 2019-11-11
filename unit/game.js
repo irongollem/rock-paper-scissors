@@ -114,4 +114,33 @@ afterEach(function () {
             }))
         })
     })
+    describe('With custom game', function () {
+        beforeEach(function () {
+            const options = [
+                new Option('ladybug', ['aphid']),
+                new Option('aphid', ['fly-trap']),
+                new Option('fly-trap', ['ladybug'])
+            ]
+            
+            game = new Game(options)
+        })
+
+        it('should have the options defined in the constructor', function () {
+            expect(game.options[0].name).toBe('ladybug')
+            expect(game.options[1].name).toBe('aphid')
+            expect(game.options[2].name).toBe('fly-trap')
+        })
+
+        it('should play your custom scenario and win aphid vs fly-trap', function () {
+            expect(game.options[1].testAgainst(game.options[2])).toBe(1)
+        })
+        it('should play your custom scenario and lose aphid vs ladybug', function () {
+            expect(game.options[1].testAgainst(game.options[0])).toBe(0)
+        })
+
+        it('should play a random scenario', function () {
+            expect(game.play(game.options[0])).toEqual(jasmine.any(Object))
+        })
+    })
 })
+
