@@ -23,9 +23,13 @@ yarn install
 ```
 And then you may run nightwatch
 ```bash
-./node_modules/.bin/nightwatch # Possibly supplement with a test file like pageLoad.js
+yarn e2e # Possibly supplement with a test file like pageLoad.js
 ```
-from the root directory.
+<!-- from the root directory or for unit tests run
+```bash
+yarn test
+``` -->
+To run the unit tests simply open `SpecRunner.html` in your favourite browser
 
 # Sidenote
 The constraints of this project did not allow for any external
