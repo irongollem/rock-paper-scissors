@@ -9,6 +9,8 @@ class ViewRenderer {
         this.resultBlock = document.querySelector('#result')
         this.scoreBoxes = document.querySelectorAll('.score-box')
         this.yourSprite = document.querySelector('#yourSprite')
+        document.querySelector('.page-title').innerHTML = `${game.options.map(option => option.name).join(', ')},
+                choose your weapon!`
     }
 
     /**
