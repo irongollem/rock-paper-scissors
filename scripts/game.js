@@ -15,12 +15,15 @@ class Game {
     constructor (options) {
         this.options = []
         this.winArray = []
+        this.bestOfFive = false
         if (options) { // This entry leaves the game option for customising through the constructor
             this.options = options
         } else {
-            this.options.push(new Option('ROCK', ['SCISSORS']))
-            this.options.push(new Option('PAPER', ['ROCK']))
-            this.options.push(new Option('SCISSORS', ['PAPER']))
+            this.options.push(new Option('ROCK', ['SCISSORS', 'LIZARD']))
+            this.options.push(new Option('PAPER', ['ROCK', 'SPOCK']))
+            this.options.push(new Option('SCISSORS', ['PAPER', 'LIZARD']))
+            this.options.push(new Option('LIZARD', ['SPOCK', 'PAPER']))
+            this.options.push(new Option('SPOCK', ['STONE', 'SCISSORS']))
         }
     }
 
@@ -48,7 +51,7 @@ class Game {
     }
 
     get score () {
-        const wins = this.winArray.reduce((sum, x) => sum + x)
+        const wins = this.winArray.reduce((sum, x) => sum + x, 0)
         const losses = this.winArray.length - wins
         const totalWin = wins >= 3
         const end = totalWin || losses >= 3
