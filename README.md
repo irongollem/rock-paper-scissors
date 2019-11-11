@@ -25,10 +25,7 @@ And then you may run nightwatch
 ```bash
 yarn e2e # Possibly supplement with a test file like pageLoad.js
 ```
-<!-- from the root directory or for unit tests run
-```bash
-yarn test
-``` -->
+
 To run the unit tests simply open `SpecRunner.html` in your favourite browser
 
 # Sidenote
